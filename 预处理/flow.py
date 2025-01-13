@@ -60,7 +60,7 @@ def preprocess_point_cloud(pcd_path, voxel_size=0.02, nb_neighbors=20, std_ratio
 
 if __name__ == "__main__":
     # 在此替换为你实际的点云文件路径
-    pcd_path = "example.pcd"
+    pcd_path = "test.pcd"
 
     # 执行点云预处理
     processed_pcd = preprocess_point_cloud(
