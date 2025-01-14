@@ -58,13 +58,13 @@ def refine_registration(source, target, transformation, voxel_size):
 # 主流程
 def main():
     # 加载点云文件
-    file1 = "bridge1.pcd"  # 替换为您的源点云文件路径
-    file2 = "bridge2.pcd"  # 替换为您的目标点云文件路径
+    file1 = "bridge1.pcd"
+    file2 = "bridge2.pcd"
     source, target = load_point_clouds(file1, file2)
 
     # 设置体素大小
-    voxel_size = 0.05  # 根据数据调整
-
+    voxel_size = 0.05
+    
     # 计算 FPFH 特征
     source_fpfh = compute_fpfh_feature(source, voxel_size)
     target_fpfh = compute_fpfh_feature(target, voxel_size)
@@ -83,6 +83,5 @@ def main():
     source.transform(refined_result.transformation)
     o3d.visualization.draw_geometries([source, target], window_name="点云配准结果")
 
-# 执行主程序
 if __name__ == "__main__":
     main()
